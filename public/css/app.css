@@ -38155,7 +38155,7 @@ input[type=file]::file-selector-button{
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-.ir-arriba i {
+.ir-arriba svg {
   padding-top: 12px;
   color: #fff;
 }
@@ -38164,16 +38164,6 @@ input[type=file]::file-selector-button{
   .ir-arriba {
     bottom: 15px;
   }
-}
-
-.ex3 span {
-  color: white;
-  background-color: #3b5998;
-}
-
-.ex3 i {
-  color: #3b5998;
-  height: 24px;
 }
 
 @media (min-width: 640px){
