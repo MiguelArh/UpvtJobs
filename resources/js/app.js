@@ -1,0 +1,75 @@
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+require('./bootstrap');
+require('lightbox2');
+
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+window.Vue = require('vue');
+
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.use(VueSweetalert2);
+Vue.component('lista-skills', require('./components/ListaSkills.vue').default);
+Vue.component('estado-vacante', require('./components/EstadoVacante.vue').default);
+Vue.component('eliminar-vacante', require('./components/EliminarVacante.vue').default);
+
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+const app = new Vue({
+    el: '#app',
+
+    data() {
+        return {
+            open: false,
+        }
+  },
+  methods: {
+    toggle() {
+        this.open = !this.open
+    }
+}
+
+
+});
+
+$(document).ready(function(){
+    irArriba();
+}); //Hacia arriba
+
+function irArriba(){
+  $('.ir-arriba').click(function(){
+      $('body,html').animate({ scrollTop:'0px' },700);
+    });
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 0){
+        $('.ir-arriba').slideDown(400);
+    }else{
+        $('.ir-arriba').slideUp(400);
+    }
+  });
+  $('.ir-abajo').click(function(){
+      $('body,html').animate({
+          scrollTop:'20px' },1000);
+        });
+}
+
+
