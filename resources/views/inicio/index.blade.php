@@ -23,7 +23,7 @@
                 Sí eres Reclutador<span class="text-green-500 block">Registrate y crea tus Vacantes</span>
             </h1>
             <div>
-                <img class="inset-0 w-full object-cover mt-5" src="{{ asset('img/05.jpg') }}" alt="devjobs">
+                <img class="inset-0 w-full object-cover mt-5" src="{{ secure_asset('img/05.jpg') }}" alt="devjobs">
             </div>
 
         </div>
